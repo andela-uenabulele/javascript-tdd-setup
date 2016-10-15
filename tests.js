@@ -28,6 +28,8 @@ describe("Test that the Input type by user is Authentiated ", function() {
 describe("Test if it handles special Integers like neg values etc ", function() {
     it("it should output 0 for input of 0 and 1", function() {
         assert(sumofprimes.sumofprimes(0) == 0, "0 isnt an Integers")
+    }) 
+it("it should output 0 for input of 1", function() {
         assert(sumofprimes.sumofprimes(1) == 0, "0 isnt an Integers")
     }) 
 
@@ -36,7 +38,7 @@ describe("Test if it handles special Integers like neg values etc ", function() 
     })
 
     it("It should return error message for greater than highest known prime no", function() {
-        assert(sumofprimes.sumofprimes(2,147,483,648) == "We are still manufacturing a PC to run that, Pls try again", "use condition")
+        assert(sumofprimes.sumofprimes(2147483648) == "We are still manufacturing a PC to run that, Pls try again", "use condition")
     })
 
 })
