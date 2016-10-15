@@ -55,7 +55,7 @@ describe("Test if it returns correct answers", function() {
 
 })
 
-describe("it should be Scalable", function() {
+describe("Test for Scalability", function() {
     it("it should complete small values within 2min ", function() {
         assert(
             function(){
@@ -65,7 +65,7 @@ describe("it should be Scalable", function() {
 
             return ((t2 - t1) < 120000) 
 
-};
+}, "Worry Not, Its Just a Dummy"
             )
     }) 
 })
