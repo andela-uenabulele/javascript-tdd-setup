@@ -11,15 +11,15 @@ var sumofprimes = require('./lib/sumofprimes.js');
 
 describe("Test that the Input type by user is Authentiated ", function() {
     it("It should not accept Arrays", function() {
-        assert(sumofprimes.sumofprimes([2,5]) == "Only Integer values accepted", "can use isniteger")
+        assert(sumofprimes.sumofprimes([2,5]) == "Only Positive Integer values accepted", "can use isniteger")
     }) 
 
     it("It should not accept Strings", function() {
-        assert(sumofprimes.sumofprimes("this is not a Prime no") == "Only Integers are accepted", "can use isinteger")
+        assert(sumofprimes.sumofprimes("this is not a Prime no") == "Only Positive Integer values accepted", "can use isinteger")
     })
 
        it("It should not accept Decimal numbers", function() {
-        assert(sumofprimes.sumofprimes(15.3) == "Only Integers are accepted", "can use isinteger")
+        assert(sumofprimes.sumofprimes(15.3) == "Only Positive Integer values accepted", "can use isinteger")
     })
 
 })
@@ -32,11 +32,11 @@ describe("Test if it handles special Integers like neg values etc ", function() 
     }) 
 
     it("It should return error message for negative values", function() {
-        assert(sumofprimes.sumofprimes(-1) == "Only Positive Integers are accepted", "use condition")
+        assert(sumofprimes.sumofprimes(-1) == "Only Positive Integer values accepted", "use condition")
     })
 
     it("It should return error message for greater than highest known prime no", function() {
-        assert(sumofprimes.sumofprimes(2,147,483,647) == "We are still manufacturing a PC to run that, Pls try again", "use condition")
+        assert(sumofprimes.sumofprimes(2,147,483,648) == "We are still manufacturing a PC to run that, Pls try again", "use condition")
     })
 
 })
