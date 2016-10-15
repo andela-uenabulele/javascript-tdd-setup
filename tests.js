@@ -32,30 +32,41 @@ describe("Test if it handles special Integers like neg values etc ", function() 
     }) 
 
     it("It should return error message for negative values", function() {
-        assert(sumofprimes.sumofprimes(-1) == "Only Positive Integers are accepted" "use condition")
+        assert(sumofprimes.sumofprimes(-1) == "Only Positive Integers are accepted", "use condition")
     })
 
     it("It should return error message for greater than highest known prime no", function() {
-        assert(sumofprimes.sumofprimes(2,147,483,647) == "Only Positive Integers are accepted" "use condition")
+        assert(sumofprimes.sumofprimes(2,147,483,647) == "We are still manufacturing a PC to run that, Pls try again", "use condition")
     })
 
 })
 
 
 
-describe("Test if it returns correct answers and acomodates decimals such as 4.0", function() {
+describe("Test if it returns correct answers", function() {
     it("it should return 17 for 10 and 3087 for 175", function() {
         assert(sumofprimes.sumofprimes(10) == 17)
         assert(sumofprimes.sumofprimes(17) == 58)
     }) 
 
-    it("It should return error message for negative values", function() {
-        assert(sumofprimes.sumofprimes(-1) == "Only Positive Integers are accepted" "use condition")
-    })
-
-    it("It should return error message for greater than highest known prime no", function() {
-        assert(sumofprimes.sumofprimes(2,147,483,647) == "Only Positive Integers are accepted" "use condition")
+    it("the input value should be inclusive if its Prime", function() {
+        assert(sumofprimes.sumofprimes(5) == 10 )
     })
 
 })
-  
+
+describe("it should be Scalable", function() {
+    it("it should complete small values within 2min ", function() {
+        assert(
+            function(){
+            var t1 = Performance.now();
+            sumofprimes.sumofprimes(10) == 17
+            t2 = Performance.now()
+
+            return ((t2 - t1) < 120000) 
+
+};
+            )
+    }) 
+})
+
