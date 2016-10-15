@@ -1,24 +1,24 @@
+/*
+To test the proper functionality of my SumOfPrimes function
+*/
+
 'use strict'
 
 var chai = require('chai');
 var assert = chai.assert;
 
-var NotesApplication = require('./lib/notesapplication.js');
-var Note = require('./lib/note.js');
+var sumofprimes = require('./lib/sumofprimes.js');
 
-describe("Note creation works properly", function() {
-    it("assigns author based on the parameter supplied in the constructor", function() {
-        note = new Note("Hello world", "Chidiebere")
-        assert(note.author == "Chidiebere")
+describe("Test that the Input type by user is Authentiated ", function() {
+    it("It should not accept Arrays", function() {
+        assert(sumofprimes.sumofprimes([2,5]) == "Only Integer values accepted", "can use isniteger")
+    }) 
+
+    it("It should not accept Strings", function() {
+        assert(sumofprimes.sumofprimes("this is not a Prime no") == "Only Integers are accepted", "can use isinteger")
     })
 })
 
-describe("Notes application increments number of notes as notes are added", function() {
-    it("increments the note list as notes are added", function() {
-        note = new Note("Hello world", "Chidiebere");
-        noteapp = new NotesApplication("Chidiebere");
-        assert(noteapp.notelist.length == 0)
-        noteapp.addNote(note)
-        assert(noteapp.notelist.length == 1)
-    })
-})
+
+
+  
